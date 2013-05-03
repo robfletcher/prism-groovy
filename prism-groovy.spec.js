@@ -2,6 +2,7 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 	beforeEach(function() {
 		this.operators = $('#operators');
 		this.keywords = $('#keywords');
+		this.numbers = $('#numbers');
 	});
 
 	it("highlights operators", function() {
@@ -23,6 +24,7 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect(this.operators.find('#bitwise-negate .operator').text()).toBe('~');
 		expect(this.operators.find('#negative .operator').text()).toBe('-');
 		expect(this.operators.find('#positive .operator').text()).toBe('+');
+		expect(this.operators.find('#assignment .operator').text()).toBe('=');
 		expect(this.operators.find('#equals .operator').text()).toBe('==');
 		expect(this.operators.find('#not-equals .operator').text()).toBe('!=');
 		expect(this.operators.find('#spaceship .operator').text()).toBe('<=>');
@@ -58,5 +60,22 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect(this.keywords.find('#def-param .keyword').eq(1).text()).toBe('def');
 		expect(this.keywords.find('#import-as .keyword').eq(1).text()).toBe('as');
 		expect(this.keywords.find('#in .keyword').eq(1).text()).toBe('in');
+	});
+
+	it("highlights numeric literals", function() {
+		expect(this.numbers.find('#int .number').text()).toBe('1234567890');
+		expect(this.numbers.find('#decimal .number').text()).toBe('12345.67890');
+		expect(this.numbers.find('#binary .number').text()).toBe('0b01');
+		expect(this.numbers.find('#hex .number').text()).toBe('0x123456789abcdef0');
+		expect(this.numbers.find('#float .number').text()).toBe('1.1f');
+		expect(this.numbers.find('#integer .number').text()).toBe('1i');
+		expect(this.numbers.find('#long .number').text()).toBe('1L');
+		expect(this.numbers.find('#big-integer .number').text()).toBe('1g');
+		expect(this.numbers.find('#big-decimal .number').text()).toBe('1.1g');
+	});
+
+	it("highlights Java 7 style numeric literals", function() {
+		expect(this.numbers.find('#underscore-int .number').text()).toBe('1_000');
+		expect(this.numbers.find('#underscore-decimal .number').text()).toBe('1_000.000_1');
 	});
 });

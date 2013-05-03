@@ -1,6 +1,7 @@
 describe("Groovy syntax highlighting for Prism.js", function() {
 	beforeEach(function() {
 		this.operators = $('#operators');
+		this.keywords = $('#keywords');
 	});
 
 	it("highlights operators", function() {
@@ -49,5 +50,13 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 	it("highlights 'keyword' operators", function() {
 		expect(this.operators.find('#instanceof .keyword').text()).toBe('instanceof');
 		expect(this.operators.find('#cast .keyword').text()).toBe('as');
+	});
+
+	it("highlights Groovy keywords", function() {
+		expect(this.keywords.find('#def-var .keyword').text()).toBe('def');
+		expect(this.keywords.find('#def-return .keyword').text()).toBe('def');
+		expect(this.keywords.find('#def-param .keyword').eq(1).text()).toBe('def');
+		expect(this.keywords.find('#import-as .keyword').eq(1).text()).toBe('as');
+		expect(this.keywords.find('#in .keyword').eq(1).text()).toBe('in');
 	});
 });

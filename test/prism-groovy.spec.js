@@ -98,4 +98,11 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect($('#range .operator').text()).toBe('..');
 		expect($('#half-ex-range .operator').text()).toBe('..<');
 	});
+
+	it("highlights string literals", function() {
+		expect($('#string .string').text()).toBe("'a string'");
+		expect($('#gstring .string').text()).toBe('"a GString"');
+		expect($('#regex-string .string').text()).toBe('/a regex style string/');
+		expect($('#pattern .string').text()).toBe('/a Pattern literal/');
+	});
 });

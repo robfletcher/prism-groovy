@@ -1,14 +1,15 @@
 <!doctype html>
 <html>
 <head>
-	<title>Sample page for Groovy syntax mode in Prism.js</title>
-	<link rel="stylesheet" type="text/css" href="lib/prism/prism.css">
+	<meta charset="utf-8">
+	<title>Groovy syntax for Prism</title>
+	<meta name="viewport" content="width=device-width">
 
+	<link rel="stylesheet" type="text/css" href="lib/prism/prism.css">
 	<link rel="stylesheet" type="text/css" href="lib/jasmine/jasmine.css">
-	<style>
-		section { overflow: hidden; }
-		code { float: left; margin: 0 0.3em 0.3em 0; }
-	</style>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
 	<script src="lib/jasmine/jasmine.js"></script>
 	<script src="lib/jasmine/jasmine-html.js"></script>
 
@@ -20,10 +21,14 @@
 </head>
 <body class="language-groovy">
 	<header>
-		<h1>Sample page for Groovy syntax mode in Prism.js</h1>
+		<h1>Groovy syntax for Prism</h1>
+		<p>This is a <a href="http://groovy.codehaus.org/" rel="external">Groovy</a> syntax plugin for <a href="http://prismjs.com/" rel="external">Prism</a>.</p>
+		<p>If you're a Groovy user and good with regular expressions you can help by forking this project and turning some of those red crosses you see <a href="#HTMLReporter">down below there</a> into green dots. The language definition file is under <em>src/prism-groovy.js</em> and all you have to do to run the tests is open <em>index.html</em> in your browser. It might also help if you read the <a href="http://prismjs.com/extending.html#language-definitions"><em>Language definitions</em></a> section of the Prism documentation.</p>
+		<p>This page is built with Prism (obviously), <a href="http://pivotal.github.io/jasmine/" rel="external">Jasmine</a>, <a href="http://jquery.com/" rel="external">jQuery</a>, a little <a href="http://h5bp.com/">HTML5 Boilerplate</a> and the <a href="http://www.impallari.com/projects/overview/libre-baskerville">Libre Baskerville</a> font.</p>
+		<a href="https://github.com/robfletcher/prism-groovy" id="fork-me"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 	</header>
 
-	<section id="operators">
+	<section id="operators" class="clearfix">
 		<h2>Operators</h2>
 		<code id="plus">a + b</code>
 		<code id="minus">a - b</code>
@@ -66,7 +71,7 @@
 		<code id="cast">a as b</code>
 	</section>
 
-	<section id="keywords">
+	<section id="keywords" class="clearfix">
 		<h2>Groovy keywords</h2>
 		<code id="def-var">def a</code>
 		<code id="def-return">def a() {}</code>
@@ -75,7 +80,7 @@
 		<code id="in">for (a in b)</code>
 	</section>
 
-	<section id="numbers">
+	<section id="numbers" class="clearfix">
 		<h2>Numeric literals</h2>
 		<code id="int">def a = 1234567890</code>
 		<code id="negative-int">def a = -1</code>
@@ -91,16 +96,12 @@
 		<code id="underscore-decimal">def a = 1_000.000_1</code>
 	</section>
 
-	<section id="collections">
+	<section id="collections" class="clearfix">
 		<h2>Collection literals</h2>
 		<code id="list">[1, 2, 3]</code>
 		<code id="map">[a: 'b', c: 'd']</code>
 		<code id="range">a..b</code>
 		<code id="half-ex-range">a..&lt;b</code>
-	</section>
-
-	<section id="misc">
-		<h2>Miscellaneous</h2>
 	</section>
 
   <script>

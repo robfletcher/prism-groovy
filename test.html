@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<title>Sample page for Groovy syntax mode in Prism.js</title>
+	<link rel="stylesheet" type="text/css" href="lib/prism/prism.css">
+
+	<link rel="stylesheet" type="text/css" href="lib/jasmine/jasmine.css">
+	<script src="lib/jasmine/jasmine.js"></script>
+	<script src="lib/jasmine/jasmine-html.js"></script>
+
+	<script src="lib/jquery/jquery-2.0.0.min.js"></script>
+	<script src="lib/prism/prism.js"></script>
+	<script src="prism-groovy.js"></script>
+
+	<script src="prism-groovy.spec.js"></script>
+</head>
+<body class="language-groovy">
+	<header>
+		<h1>Sample page for Groovy syntax mode in Prism.js</h1>
+	</header>
+
+	<section id="operators">
+		<h2>Operators</h2>
+		<code id="plus">a + b</code>
+		<code id="minus">a - b</code>
+		<code id="multiply">a * b</code>
+		<code id="divide">a / b</code>
+		<code id="power">a ** b</code>
+		<code id="mod">a % b</code>
+		<code id="or">a | b</code>
+		<code id="and">a &amp; b</code>
+		<code id="xor">a ^ b</code>
+		<code id="next-prefix">++a</code>
+		<code id="next-postfix">a++</code>
+		<code id="previous-prefix">--a</code>
+		<code id="previous-postfix">a--</code>
+		<code id="get-at">a[b]</code>
+		<code id="left-shift">a &lt;&lt; b</code>
+		<code id="right-shift">a &gt;&gt; b</code>
+		<code id="bitwise-negate">~a</code>
+		<code id="negative">-a</code>
+		<code id="positive">+a</code>
+		<code id="equals">a == b</code>
+		<code id="not-equals">a != b</code>
+		<code id="spaceship">a &lt;=&gt; b</code>
+		<code id="gt">a &gt; b</code>
+		<code id="gte">a &gt;= b</code>
+		<code id="lt">a &lt; b</code>
+		<code id="lte">a &lt;= b</code>
+		<code id="dereference">a.b</code>
+		<code id="safe-dereference">a?.b</code>
+		<code id="spread">a*.b</code>
+		<code id="java-field">a.@b</code>
+		<code id="spread-java-field">a*.@b</code>
+		<code id="method-ref">a.&amp;b</code>
+		<code id="instanceof">a instanceof b</code>
+		<code id="elvis">a ?: b</code>
+		<code id="regex">a =~ b</code>
+		<code id="firecracker">a ==~ b</code>
+		<code id="case">a as b</code>
+	</section>
+
+  <script>
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+</body>
+</html>

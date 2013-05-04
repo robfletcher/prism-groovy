@@ -1,43 +1,53 @@
 describe("Groovy syntax highlighting for Prism.js", function() {
 
-	it("highlights operators", function() {
-		expect($('#plus .operator').text()).toBe('+');
-		expect($('#minus .operator').text()).toBe('-');
-		expect($('#multiply .operator').text()).toBe('*');
-		expect($('#divide .operator').text()).toBe('/');
-		expect($('#power .operator').text()).toBe('**');
-		expect($('#mod .operator').text()).toBe('%');
-		expect($('#or .operator').text()).toBe('||');
-		expect($('#bitwise-or .operator').text()).toBe('|');
-		expect($('#and .operator').text()).toBe('&&');
-		expect($('#bitwise-and .operator').text()).toBe('&');
-		expect($('#xor .operator').text()).toBe('^');
-		expect($('#next-prefix .operator').text()).toBe('++');
-		expect($('#next-postfix .operator').text()).toBe('++');
-		expect($('#previous-prefix .operator').text()).toBe('--');
-		expect($('#previous-postfix .operator').text()).toBe('--');
-		expect($('#left-shift .operator').text()).toBe('<<');
-		expect($('#right-shift .operator').text()).toBe('>>');
-		expect($('#bitwise-negate .operator').text()).toBe('~');
-		expect($('#negative .operator').text()).toBe('-');
-		expect($('#positive .operator').text()).toBe('+');
-		expect($('#assignment .operator').text()).toBe('=');
-		expect($('#equals .operator').text()).toBe('==');
-		expect($('#not-equals .operator').text()).toBe('!=');
-		expect($('#spaceship .operator').text()).toBe('<=>');
-		expect($('#gt .operator').text()).toBe('>');
-		expect($('#gte .operator').text()).toBe('>=');
-		expect($('#lt .operator').text()).toBe('<');
-		expect($('#lte .operator').text()).toBe('<=');
-		expect($('#dereference .operator').text()).toBe('.');
-		expect($('#safe-dereference .operator').text()).toBe('?.');
-		expect($('#spread .operator').text()).toBe('*.');
-		expect($('#java-field .operator').text()).toBe('.@');
-		expect($('#spread-java-field .operator').text()).toBe('*.@');
-		expect($('#method-ref .operator').text()).toBe('.&');
-		expect($('#elvis .operator').text()).toBe('?:');
-		expect($('#regex .operator').text()).toBe('=~');
-		expect($('#firecracker .operator').text()).toBe('==~');
+	describe("Groovy operators", function() {
+		var operators = {
+			plus: '+',
+			minus: '-',
+			multiply: '*',
+			divide: '/',
+			power: '**',
+			mod: '%',
+			or: '||',
+			'bitwise-or': '|',
+			and: '&&',
+			'bitwise-and': '&',
+			xor: '^',
+			'next-prefix': '++',
+			'next-postfix': '++',
+			'previous-prefix': '--',
+			'previous-postfix': '--',
+			'left-shift': '<<',
+			'right-shift': '>>',
+			'bitwise-negate': '~',
+			negative: '-',
+			positive: '+',
+			assignment: '=',
+			equals: '==',
+			'not-equals': '!=',
+			spaceship: '<=>',
+			gt: '>',
+			gte: '>=',
+			lt: '<',
+			lte: '<=',
+			dereference: '.',
+			'safe-dereference': '?.',
+			spread: '*.',
+			'java-field': '.@',
+			'spread-java-field': '*.@',
+			'method-ref': '.&',
+			'elvis': '?:',
+			regex: '=~',
+			firecracker: '==~'
+		};
+
+		for (op in operators) {
+			(function(name, symbol) {
+				it("highlights the " + name + " operator", function() {
+					expect($('#' + name + ' .operator').text()).toBe(symbol);
+				});
+			})(op, operators[op]);
+		}
 	});
 
 	it("highlights index operator", function() {
@@ -50,8 +60,11 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect($('#ternary .operator').eq(1).text()).toBe(':');
 	});
 
-	it("highlights 'keyword' operators", function() {
+	it("highlights the instanceof operator", function() {
 		expect($('#instanceof .keyword').text()).toBe('instanceof');
+	});
+
+	it("highlights the type-cast operator", function() {
 		expect($('#cast .keyword').text()).toBe('as');
 	});
 

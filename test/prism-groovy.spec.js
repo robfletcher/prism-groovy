@@ -107,4 +107,9 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect($('#regex-string .string').text()).toBe('/a regex style string/');
 		expect($('#pattern .string').text()).toBe('/a Pattern literal/');
 	});
+
+        it("highlights multiline strings", function() {
+                expect($('#multiline-string .string').text()).toBe("'''a\nmultiline\nstring'''");
+                expect($('#multiline-gstring .string').text()).toBe('"""a\nmultiline\ngstring"""');
+        });
 });

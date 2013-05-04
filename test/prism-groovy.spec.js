@@ -1,6 +1,6 @@
-describe("Groovy syntax highlighting for Prism.js", function() {
+describe("Groovy syntax highlighting for Prism", function() {
 
-	describe("Groovy operators", function() {
+	describe("operators", function() {
 		var operators = {
 			plus: '+',
 			minus: '-',
@@ -48,81 +48,102 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 				});
 			})(op, operators[op]);
 		}
+
+		it("highlights index operator", function() {
+			expect($('#get-at .punctuation').eq(0).text()).toBe('[');
+			expect($('#get-at .punctuation').eq(1).text()).toBe(']');
+		});
+
+		it("highlights ternary operator", function() {
+			expect($('#ternary .operator').eq(0).text()).toBe('?');
+			expect($('#ternary .operator').eq(1).text()).toBe(':');
+		});
+
+		it("highlights the instanceof operator", function() {
+			expect($('#instanceof .keyword').text()).toBe('instanceof');
+		});
+
+		it("highlights the type-cast operator", function() {
+			expect($('#cast .keyword').text()).toBe('as');
+		});
 	});
 
-	it("highlights index operator", function() {
-		expect($('#get-at .punctuation').eq(0).text()).toBe('[');
-		expect($('#get-at .punctuation').eq(1).text()).toBe(']');
+	describe("keywords", function() {
+		it("highlights Groovy keywords", function() {
+			expect($('#def-var .keyword').text()).toBe('def');
+			expect($('#def-return .keyword').text()).toBe('def');
+			expect($('#def-param .keyword').eq(1).text()).toBe('def');
+			expect($('#import-as .keyword').eq(1).text()).toBe('as');
+			expect($('#in .keyword').eq(1).text()).toBe('in');
+		});
 	});
 
-	it("highlights ternary operator", function() {
-		expect($('#ternary .operator').eq(0).text()).toBe('?');
-		expect($('#ternary .operator').eq(1).text()).toBe(':');
+	describe("numeric literals", function() {
+		var numerics = {
+			int:                  '1234567890',
+			'negative-int':       '-1',
+			decimal:              '12345.67890',
+			binary:               '0b01',
+			hex:                  '0x123456789abcdef0',
+			float:                '1.1f',
+			integer:              '1i',
+			long:                 '1L',
+			'big-integer':        '1g',
+			'big-decimal':        '1.1g',
+			'underscore-int':     '1_000',
+			'underscore-decimal': '1_000.000_1'
+		}
+
+		for (num in numerics) {
+			(function(name, value) {
+				it("highlights a literal " + name + " number", function() {
+					expect($('#' + name + ' .number').text()).toBe(value);
+				});
+			})(num, numerics[num]);
+		}
 	});
 
-	it("highlights the instanceof operator", function() {
-		expect($('#instanceof .keyword').text()).toBe('instanceof');
+	describe("collection literals", function() {
+		it("highlights list literals", function() {
+			expect($('#list .punctuation').eq(0).text()).toBe('[');
+			expect($('#list .punctuation').eq(1).text()).toBe(',');
+			expect($('#list .punctuation').eq(2).text()).toBe(',');
+			expect($('#list .punctuation').eq(3).text()).toBe(']');
+		});
+
+		it("highlights map literals", function() {
+			expect($('#map .punctuation').eq(0).text()).toBe('[');
+			expect($('#map .punctuation').eq(1).text()).toBe(':');
+			expect($('#map .punctuation').eq(2).text()).toBe(',');
+			expect($('#map .punctuation').eq(3).text()).toBe(':');
+			expect($('#map .punctuation').eq(4).text()).toBe(']');
+		});
+
+		it("highlights range literals", function() {
+			expect($('#range .operator').text()).toBe('..');
+		});
+
+		it("highlights half-exclusive range literals", function() {
+			expect($('#half-ex-range .operator').text()).toBe('..<');
+		});
 	});
 
-	it("highlights the type-cast operator", function() {
-		expect($('#cast .keyword').text()).toBe('as');
-	});
+	describe("string literals", function() {
+		var stringTypes = {
+			string:              "'a string'",
+			gstring:             '"a GString"',
+			'regex-string':      '/a regex style string/',
+			pattern:             '/a Pattern literal/',
+			'multiline-string':  "'''a\nmultiline\nstring'''",
+			'multiline-gstring': '"""a\nmultiline\ngstring"""'
+		};
 
-	it("highlights Groovy keywords", function() {
-		expect($('#def-var .keyword').text()).toBe('def');
-		expect($('#def-return .keyword').text()).toBe('def');
-		expect($('#def-param .keyword').eq(1).text()).toBe('def');
-		expect($('#import-as .keyword').eq(1).text()).toBe('as');
-		expect($('#in .keyword').eq(1).text()).toBe('in');
-	});
-
-	it("highlights numeric literals", function() {
-		expect($('#int .number').text()).toBe('1234567890');
-		expect($('#negative-int .number').text()).toBe('-1');
-		expect($('#decimal .number').text()).toBe('12345.67890');
-		expect($('#binary .number').text()).toBe('0b01');
-		expect($('#hex .number').text()).toBe('0x123456789abcdef0');
-		expect($('#float .number').text()).toBe('1.1f');
-		expect($('#integer .number').text()).toBe('1i');
-		expect($('#long .number').text()).toBe('1L');
-		expect($('#big-integer .number').text()).toBe('1g');
-		expect($('#big-decimal .number').text()).toBe('1.1g');
-	});
-
-	it("highlights Java 7 style numeric literals", function() {
-		expect($('#underscore-int .number').text()).toBe('1_000');
-		expect($('#underscore-decimal .number').text()).toBe('1_000.000_1');
-	});
-
-	it("highlights list literals", function() {
-		expect($('#list .punctuation').eq(0).text()).toBe('[');
-		expect($('#list .punctuation').eq(1).text()).toBe(',');
-		expect($('#list .punctuation').eq(2).text()).toBe(',');
-		expect($('#list .punctuation').eq(3).text()).toBe(']');
-	});
-
-	it("highlights map literals", function() {
-		expect($('#map .punctuation').eq(0).text()).toBe('[');
-		expect($('#map .punctuation').eq(1).text()).toBe(':');
-		expect($('#map .punctuation').eq(2).text()).toBe(',');
-		expect($('#map .punctuation').eq(3).text()).toBe(':');
-		expect($('#map .punctuation').eq(4).text()).toBe(']');
-	});
-
-	it("highlights range literals", function() {
-		expect($('#range .operator').text()).toBe('..');
-		expect($('#half-ex-range .operator').text()).toBe('..<');
-	});
-
-	it("highlights string literals", function() {
-		expect($('#string .string').text()).toBe("'a string'");
-		expect($('#gstring .string').text()).toBe('"a GString"');
-		expect($('#regex-string .string').text()).toBe('/a regex style string/');
-		expect($('#pattern .string').text()).toBe('/a Pattern literal/');
-	});
-
-	it("highlights multiline strings", function() {
-		expect($('#multiline-string .string').text()).toBe("'''a\nmultiline\nstring'''");
-		expect($('#multiline-gstring .string').text()).toBe('"""a\nmultiline\ngstring"""');
+		for (str in stringTypes) {
+			(function(name, value) {
+				it("highlights " + name + " literals", function() {
+					expect($('#' + name + ' .string').text()).toBe(value);
+				});
+			})(str, stringTypes[str])
+		}
 	});
 });

@@ -491,21 +491,67 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
 	color: #333;
 	font-family: "Libre Baskerville", serif;
+}
+
+.content {
 	max-width: 60em;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0 1em;
 }
 
-a:link {
-	text-decoration: none;
+header, footer {
+	padding: 1em 0;
+}
+
+header, #groovy-syntax {
+	margin-bottom: 3em;
 }
 
 footer {
-	margin-top: 2em;
-	padding: 2em 1em 1em;
+	margin-top: 3em;
+	background-color: #222;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #333;
+	border-bottom: 1px dotted #333;
+	-moz-transition: all 0.125s;
+	-webkit-transition: all 0.125s;
+	-o-transition: all 0.125s;
+	transition: all 0.125s;
+}
+
+footer a:link,
+footer a:visited {
+	color: #fff;
+	border-bottom-color: #fff;
+}
+
+a:active,
+a:hover,
+footer a:active,
+footer a:hover {
+	color: #b03911;
+	border-bottom-color: #b03911;
+}
+
+#groovy-syntax h1 {
+	margin-bottom: 0;
 }
 
 pre {

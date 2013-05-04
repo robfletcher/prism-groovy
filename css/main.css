@@ -503,6 +503,10 @@ a:link {
 	text-decoration: none;
 }
 
+pre {
+        clear: both;
+}
+
 code {
 	float: left;
 	margin: 0 0.3em 0.3em 0;

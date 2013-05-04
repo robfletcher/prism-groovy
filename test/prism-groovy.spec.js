@@ -165,5 +165,15 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#gstring-with-expression .punctuation').text()).toBe('${()}');
 			expect($('#gstring-with-expression .operator').text()).toBe('.+');
 		});
-	})
+	});
+
+	describe("comments", function() {
+		it("highlights line comments", function() {
+			expect($('#line-comment .comment').text()).toBe(' // line comment swallows() all + "tokens"\n');
+		});
+
+		it("highlights block comments", function() {
+			expect($('#block-comment .comment').text()).toBe('/* block comment\nspans\nlines */');
+		});
+	});
 });

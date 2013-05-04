@@ -134,6 +134,15 @@ expression ${a.b() + a} inside a
 multiline
 GString"""</code></pre>
 		</section>
+
+		<section class="clearfix">
+			<h2>Comments</h2>
+			<pre><code id="line-comment">a // line comment swallows() all + "tokens"
+a + b</code></pre>
+			<pre><code id="block-comment">a /* block comment
+spans
+lines */ a</code></pre>
+		</section>
 	</section>
 
 	<section id="jasmine-tests" class="content">

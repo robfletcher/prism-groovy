@@ -20,113 +20,123 @@
 
 	<script src="test/prism-groovy.spec.js"></script>
 </head>
-<body class="language-groovy">
+<body>
 
 	<header>
 		<h1>Groovy syntax for Prism</h1>
 		<p>This is a <a href="http://groovy.codehaus.org/" rel="external">Groovy</a> syntax plugin for <a href="http://prismjs.com/" rel="external">Prism</a>.</p>
 		<p>If you want to use Prism to highlight Groovy code examples in your pages just add the <a href="https://github.com/robfletcher/prism-groovy/blob/gh-pages/src/prism-groovy.js"><em>prism-groovy.js</em></a> language definition and add a <em>"language-groovy"</em> class to your <em>&lt;code&gt;</em> blocks.</p>
 		<p>If you're a Groovy user and good with regular expressions you can help by forking this project and turning some of those red crosses you see <a href="#HTMLReporter">down below there</a> into green dots. The language definition file is under <em>src/prism-groovy.js</em> and all you have to do to run the tests is open <em>index.html</em> in your browser. It might also help if you read the <a href="http://prismjs.com/extending.html#language-definitions" rel="external"><em>Language definitions</em></a> section of the Prism documentation.</p>
-		<p>This page is built with Prism (obviously), <a href="http://pivotal.github.io/jasmine/" rel="external">Jasmine</a>, <a href="http://jquery.com/" rel="external">jQuery</a>, a little <a href="http://h5bp.com/" rel="external">HTML5 Boilerplate</a> and the <a href="http://www.impallari.com/projects/overview/libre-baskerville" rel="external">Libre Baskerville</a> font.</p>
-		<a href="https://github.com/robfletcher/prism-groovy" id="fork-me"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 	</header>
 
 	<hr>
-	<h1>Groovy syntax examples</h1>
 
-	<section id="operators" class="clearfix">
-		<h2>Operators</h2>
-		<code id="plus">a + b</code>
-		<code id="minus">a - b</code>
-		<code id="multiply">a * b</code>
-		<code id="divide">a / b</code>
-		<code id="power">a ** b</code>
-		<code id="mod">a % b</code>
-		<code id="or">a || b</code>
-		<code id="bitwise-or">a | b</code>
-		<code id="and">a &amp;&amp; b</code>
-		<code id="bitwise-and">a &amp; b</code>
-		<code id="xor">a ^ b</code>
-		<code id="next-prefix">++a</code>
-		<code id="next-postfix">a++</code>
-		<code id="previous-prefix">--a</code>
-		<code id="previous-postfix">a--</code>
-		<code id="get-at">a[b]</code>
-		<code id="left-shift">a &lt;&lt; b</code>
-		<code id="right-shift">a &gt;&gt; b</code>
-		<code id="bitwise-negate">~a</code>
-		<code id="negative">-a</code>
-		<code id="positive">+a</code>
-		<code id="assignment">a = b</code>
-		<code id="equals">a == b</code>
-		<code id="not-equals">a != b</code>
-		<code id="spaceship">a &lt;=&gt; b</code>
-		<code id="gt">a &gt; b</code>
-		<code id="gte">a &gt;= b</code>
-		<code id="lt">a &lt; b</code>
-		<code id="lte">a &lt;= b</code>
-		<code id="dereference">a.b</code>
-		<code id="safe-dereference">a?.b</code>
-		<code id="spread">a*.b</code>
-		<code id="java-field">a.@b</code>
-		<code id="spread-java-field">a*.@b</code>
-		<code id="method-ref">a.&amp;b</code>
-		<code id="instanceof">a instanceof b</code>
-		<code id="ternary">a ? a : b</code>
-		<code id="elvis">a ?: b</code>
-		<code id="regex">a =~ b</code>
-		<code id="firecracker">a ==~ b</code>
-		<code id="cast">a as b</code>
-	</section>
+	<section id="groovy-syntax" class="clearfix language-groovy">
+		<h1>Groovy syntax examples</h1>
 
-	<section id="keywords" class="clearfix">
-		<h2>Groovy keywords</h2>
-		<code id="def-var">def a</code>
-		<code id="def-return">def a() {}</code>
-		<code id="def-param">void a(def b) {}</code>
-		<code id="import-as">import a as b</code>
-		<code id="in">for (a in b)</code>
-	</section>
+		<section class="clearfix">
+			<h2>Operators</h2>
+			<code id="plus">a + b</code>
+			<code id="minus">a - b</code>
+			<code id="multiply">a * b</code>
+			<code id="divide">a / b</code>
+			<code id="power">a ** b</code>
+			<code id="mod">a % b</code>
+			<code id="or">a || b</code>
+			<code id="bitwise-or">a | b</code>
+			<code id="and">a &amp;&amp; b</code>
+			<code id="bitwise-and">a &amp; b</code>
+			<code id="xor">a ^ b</code>
+			<code id="next-prefix">++a</code>
+			<code id="next-postfix">a++</code>
+			<code id="previous-prefix">--a</code>
+			<code id="previous-postfix">a--</code>
+			<code id="get-at">a[b]</code>
+			<code id="left-shift">a &lt;&lt; b</code>
+			<code id="right-shift">a &gt;&gt; b</code>
+			<code id="bitwise-negate">~a</code>
+			<code id="negative">-a</code>
+			<code id="positive">+a</code>
+			<code id="assignment">a = b</code>
+			<code id="equals">a == b</code>
+			<code id="not-equals">a != b</code>
+			<code id="spaceship">a &lt;=&gt; b</code>
+			<code id="gt">a &gt; b</code>
+			<code id="gte">a &gt;= b</code>
+			<code id="lt">a &lt; b</code>
+			<code id="lte">a &lt;= b</code>
+			<code id="dereference">a.b</code>
+			<code id="safe-dereference">a?.b</code>
+			<code id="spread">a*.b</code>
+			<code id="java-field">a.@b</code>
+			<code id="spread-java-field">a*.@b</code>
+			<code id="method-ref">a.&amp;b</code>
+			<code id="instanceof">a instanceof b</code>
+			<code id="ternary">a ? a : b</code>
+			<code id="elvis">a ?: b</code>
+			<code id="regex">a =~ b</code>
+			<code id="firecracker">a ==~ b</code>
+			<code id="cast">a as b</code>
+		</section>
 
-	<section id="numbers" class="clearfix">
-		<h2>Numeric literals</h2>
-		<code id="int">def a = 1234567890</code>
-		<code id="negative-int">def a = -1</code>
-		<code id="decimal">def a = 12345.67890</code>
-		<code id="binary">def a = 0b01</code>
-		<code id="hex">def a = 0x123456789abcdef0</code>
-		<code id="float">def a = 1.1f</code>
-		<code id="integer">def a = 1i</code>
-		<code id="long">def a = 1L</code>
-		<code id="big-integer">def a = 1g</code>
-		<code id="big-decimal">def a = 1.1g</code>
-		<code id="underscore-int">def a = 1_000</code>
-		<code id="underscore-decimal">def a = 1_000.000_1</code>
-	</section>
+		<section class="clearfix">
+			<h2>Groovy keywords</h2>
+			<code id="def-var">def a</code>
+			<code id="def-return">def a() {}</code>
+			<code id="def-param">void a(def b) {}</code>
+			<code id="import-as">import a as b</code>
+			<code id="in">for (a in b)</code>
+		</section>
 
-	<section id="collections" class="clearfix">
-		<h2>Collection literals</h2>
-		<code id="list">[1, 2, 3]</code>
-		<code id="map">[a: 'b', c: 'd']</code>
-		<code id="range">a..b</code>
-		<code id="half-ex-range">a..&lt;b</code>
-	</section>
+		<section class="clearfix">
+			<h2>Numeric literals</h2>
+			<code id="int">def a = 1234567890</code>
+			<code id="negative-int">def a = -1</code>
+			<code id="decimal">def a = 12345.67890</code>
+			<code id="binary">def a = 0b01</code>
+			<code id="hex">def a = 0x123456789abcdef0</code>
+			<code id="float">def a = 1.1f</code>
+			<code id="integer">def a = 1i</code>
+			<code id="long">def a = 1L</code>
+			<code id="big-integer">def a = 1g</code>
+			<code id="big-decimal">def a = 1.1g</code>
+			<code id="underscore-int">def a = 1_000</code>
+			<code id="underscore-decimal">def a = 1_000.000_1</code>
+		</section>
 
-	<section id="strings" class="clearfix">
-		<h2>String literals</h2>
-		<code id="string">a = 'a string'</code>
-		<code id="gstring">a = "a GString"</code>
-		<code id="regex-string">a = /a regex style string/</code>
-		<code id="pattern">a = ~/a Pattern literal/</code>
-		<pre><code id="multiline-string">'''a
-multiline
-string'''</code></pre>
-		<pre><code id="multiline-gstring">"""a
-multiline
-GString"""</code></pre>
+		<section class="clearfix">
+			<h2>Collection literals</h2>
+			<code id="list">[1, 2, 3]</code>
+			<code id="map">[a: 'b', c: 'd']</code>
+			<code id="range">a..b</code>
+			<code id="half-ex-range">a..&lt;b</code>
+		</section>
+
+		<section class="clearfix">
+			<h2>String literals</h2>
+			<code id="string">a = 'a string'</code>
+			<code id="gstring">a = "a GString"</code>
+			<code id="regex-string">a = /a regex style string/</code>
+			<code id="pattern">a = ~/a Pattern literal/</code>
+			<pre><code id="multiline-string">'''a
+			multiline
+			string'''</code></pre>
+			<pre><code id="multiline-gstring">"""a
+			multiline
+			GString"""</code></pre>
+		</section>
 	</section>
 
 	<hr>
-	<h1 id="test-runner">Test results</h1>
+
+	<section id="jasmine-tests">
+		<h1>Test results</h1>
+	</section>
+
+	<footer>
+		<p>This page is built with Prism (obviously), <a href="http://pivotal.github.io/jasmine/" rel="external">Jasmine</a>, <a href="http://jquery.com/" rel="external">jQuery</a>, a little <a href="http://h5bp.com/" rel="external">HTML5 Boilerplate</a> and the <a href="http://www.impallari.com/projects/overview/libre-baskerville" rel="external">Libre Baskerville</a> font.</p>
+		<a href="https://github.com/robfletcher/prism-groovy" id="fork-me"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+	</footer>
+
 </body>
 </html>

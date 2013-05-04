@@ -7,8 +7,10 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect($('#divide .operator').text()).toBe('/');
 		expect($('#power .operator').text()).toBe('**');
 		expect($('#mod .operator').text()).toBe('%');
-		expect($('#or .operator').text()).toBe('|');
-		expect($('#and .operator').text()).toBe('&');
+		expect($('#or .operator').text()).toBe('||');
+                expect($('#bitwise-or .operator').text()).toBe('|');
+		expect($('#and .operator').text()).toBe('&&');
+                expect($('#bitwise-and .operator').text()).toBe('&');
 		expect($('#xor .operator').text()).toBe('^');
 		expect($('#next-prefix .operator').text()).toBe('++');
 		expect($('#next-postfix .operator').text()).toBe('++');

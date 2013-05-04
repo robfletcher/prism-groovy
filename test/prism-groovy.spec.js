@@ -8,9 +8,9 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect($('#power .operator').text()).toBe('**');
 		expect($('#mod .operator').text()).toBe('%');
 		expect($('#or .operator').text()).toBe('||');
-                expect($('#bitwise-or .operator').text()).toBe('|');
+		expect($('#bitwise-or .operator').text()).toBe('|');
 		expect($('#and .operator').text()).toBe('&&');
-                expect($('#bitwise-and .operator').text()).toBe('&');
+		expect($('#bitwise-and .operator').text()).toBe('&');
 		expect($('#xor .operator').text()).toBe('^');
 		expect($('#next-prefix .operator').text()).toBe('++');
 		expect($('#next-postfix .operator').text()).toBe('++');
@@ -108,8 +108,8 @@ describe("Groovy syntax highlighting for Prism.js", function() {
 		expect($('#pattern .string').text()).toBe('/a Pattern literal/');
 	});
 
-        it("highlights multiline strings", function() {
-                expect($('#multiline-string .string').text()).toBe("'''a\nmultiline\nstring'''");
-                expect($('#multiline-gstring .string').text()).toBe('"""a\nmultiline\ngstring"""');
-        });
+	it("highlights multiline strings", function() {
+		expect($('#multiline-string .string').text()).toBe("'''a\nmultiline\nstring'''");
+		expect($('#multiline-gstring .string').text()).toBe('"""a\nmultiline\ngstring"""');
+	});
 });

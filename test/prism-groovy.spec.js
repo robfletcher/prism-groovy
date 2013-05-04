@@ -146,4 +146,24 @@ describe("Groovy syntax highlighting for Prism", function() {
 			})(str, stringTypes[str])
 		}
 	});
+
+	describe("string interpolation", function() {
+		it("highlights variables in GStrings", function() {
+			expect($('#gstring-with-variable .string').text()).toBe('"var ref  in GString"');
+			expect($('#gstring-with-variable .punctuation').text()).toBe('$');
+			expect($('#gstring-with-variable .operator').text()).toBe('.');
+		});
+
+		it("highlights expressions in GStrings", function() {
+			expect($('#gstring-with-expression .string').text()).toBe('"expression  in GString"');
+			expect($('#gstring-with-expression .punctuation').text()).toBe('${()}');
+			expect($('#gstring-with-expression .operator').text()).toBe('.+');
+		});
+
+		it("highlights expressions in multiline GStrings", function() {
+			expect($('#gstring-with-expression .string').text()).toBe('"an\nexpression  inside a\nmultiline\nGString"');
+			expect($('#gstring-with-expression .punctuation').text()).toBe('${()}');
+			expect($('#gstring-with-expression .operator').text()).toBe('.+');
+		});
+	})
 });

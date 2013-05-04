@@ -124,6 +124,16 @@ string'''</code></pre>
 multiline
 GString"""</code></pre>
 		</section>
+
+		<section class="clearfix">
+			<h2>String interpolation</h2>
+			<code id="gstring-with-variable">println "var ref $a.b in GString"</code>
+			<code id="gstring-with-expression">println "expression ${a.b() + a} in GString"</code>
+			<pre><code id="multiline-gstring-with-expression">"""an
+expression ${a.b() + a} inside a
+multiline
+GString"""</code></pre>
+		</section>
 	</section>
 
 	<section id="jasmine-tests" class="content">

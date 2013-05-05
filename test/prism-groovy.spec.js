@@ -176,4 +176,12 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#block-comment .comment').text()).toBe('/* block comment\nspans\nlines */');
 		});
 	});
+
+	describe("block labels", function() {
+		it("highlights labels in Spock specifications", function() {
+			expect($('#spock .block-label').eq(0).text()).toBe('given:');
+			expect($('#spock .block-label').eq(1).text()).toBe('when:');
+			expect($('#spock .block-label').eq(2).text()).toBe('then:');
+		});
+	});
 });

@@ -4,3 +4,7 @@ Prism.languages.groovy = Prism.languages.extend('clike', {
     'number': /\b0b[01]+\b|\b0x[\da-f]+(\.[\da-fp\-]+)?\b|\b\d+(\.\d+[e]?[\d]*)?[glidf]\b|\d+(\.\d+)?\b/gi,
     'operator': /={0,2}~|\?\.|\*?\.@|\.&amp;|\.(?=\w)|\.{2}(&lt;)?(?!\.)|-&gt;|\?:|[-+]{1,2}|!|(&lt;=)?&gt;|&lt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\/|\^|%/g
 });
+
+Prism.languages.insertBefore('groovy', 'punctuation', {
+    'block-label': /\b(setup|given|when|then|and|cleanup|expect|where):/g
+});

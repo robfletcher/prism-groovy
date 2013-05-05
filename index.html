@@ -143,6 +143,15 @@ a + b</code></pre>
 spans
 lines */ a</code></pre>
 		</section>
+
+		<section class="clearfix">
+			<h2>Spock block labels</h2>
+			<pre><code id="spock">void "a specification"() {
+	given: def a = 1
+	when: a++
+	then: a == old(a) + 1
+}</code></pre>
+		</section>
 	</section>
 
 	<section id="jasmine-tests" class="content">

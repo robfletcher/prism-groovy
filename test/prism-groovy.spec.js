@@ -135,7 +135,7 @@ describe("Groovy syntax highlighting for Prism", function() {
 			'regex-string':      '/a regex style string/',
 			pattern:             '/a Pattern literal/',
 			'multiline-string':  "'''a\nmultiline\nstring'''",
-			'multiline-gstring': '"""a\nmultiline\ngstring"""'
+			'multiline-gstring': '"""a\nmultiline\nGString"""'
 		};
 
 		for (str in stringTypes) {

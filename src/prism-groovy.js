@@ -13,7 +13,8 @@ Prism.languages.insertBefore('groovy', 'punctuation', {
     	pattern: /("""|''')[\W\w]*?\1|("|'|\/).*?\2/g,
     	inside: {
     		'expression': {
-    			pattern: /\$\{.*?\}/,
+    			pattern: /([^\\])(\$\{.*?\})/,
+		    	lookbehind: true,
     			inside: Prism.languages.extend('groovy', {
     				'punctuation': /[{}[\];(),.:$]/g
     			})

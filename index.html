@@ -133,6 +133,8 @@ GString"""</code></pre>
 expression ${a.b() + a} inside a
 multiline
 GString"""</code></pre>
+			<code id="string-with-expression">println 'single-quoted strings do ${false ? "" : "not"} contain expressions'</code>
+			<code id="gstring-with-escaped-expression">println "escaped \${expressions} are not expressions"</code>
 		</section>
 
 		<section class="clearfix">

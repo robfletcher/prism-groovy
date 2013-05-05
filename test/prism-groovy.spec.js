@@ -165,6 +165,14 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#multiline-gstring-with-expression .punctuation').text()).toBe('${()}');
 			expect($('#multiline-gstring-with-expression .operator').text()).toBe('.+');
 		});
+
+		it("does not highlight expressions in single-quoted strings", function() {
+			expect($('#string-with-expression .expression').length).toBe(0);
+		});
+
+		it("does not highlight expressions if the $ is excaped", function() {
+			expect($('#gstring-with-escaped-expression .expression').length).toBe(0);
+		});
 	});
 
 	describe("comments", function() {

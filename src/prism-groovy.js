@@ -8,7 +8,7 @@ Prism.languages.insertBefore('groovy', 'punctuation', {
     'block-label': /\b(setup|given|when|then|and|cleanup|expect|where):/g
 });
 
-Prism.languages.insertBefore('groovy', 'punctuation', {
+Prism.languages.insertBefore('groovy', 'keyword', {
     'string': {
     	pattern: /("""|''')[\W\w]*?\1|("|'|\/).*?\2/g,
     	inside: {

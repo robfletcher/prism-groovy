@@ -504,10 +504,18 @@ body {
 }
 
 .content {
-	max-width: 60em;
+	width: 100%;
+    overflow-x: hidden;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0 1em;
+}
+
+@media (min-width: 960px) {
+    .content {
+        width: auto;
+        max-width: 960px;
+    }
 }
 
 header, footer {

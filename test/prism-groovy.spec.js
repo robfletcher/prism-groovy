@@ -211,5 +211,9 @@ describe("Groovy syntax highlighting for Prism", function() {
 		it("highlights simple annotations", function() {
 			expect($('#simple-annotation .annotation').text()).toBe('@Canonical');
 		})
+
+		it("highlights annotations with arguments", function() {
+			expect($('#annotation-with-arguments .annotation').text()).toBe('@DelegatesTo');
+		})
 	})
 });

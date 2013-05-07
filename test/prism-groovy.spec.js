@@ -196,4 +196,10 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#spock .block-label').eq(2).text()).toBe('then:');
 		});
 	});
+
+	describe("method signatures", function() {
+		it("highlights varargs parameters", function() {
+			expect($('#varargs .punctuation').text()).toBe('(...)');
+		})
+	});
 });

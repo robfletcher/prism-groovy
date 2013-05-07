@@ -583,6 +583,10 @@ code[class*="language-"], pre[class*="language-"] {
     color: steelblue;
 }
 
+.token.annotation {
+    color: slategray;
+}
+
 #fork-me {
 	position: absolute;
 	top: 0;

@@ -206,4 +206,10 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#varargs .punctuation').text()).toBe('(...)');
 		})
 	});
+
+	describe("annotations", function() {
+		it("highlights simple annotations", function() {
+			expect($('#simple-annotation .annotation').text()).toBe('@Canonical');
+		})
+	})
 });

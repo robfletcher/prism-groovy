@@ -25,7 +25,19 @@
 	<header>
 		<h1>Groovy syntax for Prism</h1>
 		<p>This is a <a href="http://groovy.codehaus.org/" rel="external">Groovy</a> syntax plugin for <a href="http://prismjs.com/" rel="external">Prism</a>.</p>
-		<p>If you want to use Prism to highlight Groovy code examples in your pages just add the <a href="https://github.com/robfletcher/prism-groovy/blob/gh-pages/src/prism-groovy.js"><em>prism-groovy.js</em></a> language definition and add a <em>"language-groovy"</em> class to your <em>&lt;code&gt;</em> blocks.</p>
+		<p>If you want to use Prism to highlight Groovy code examples in your pages just include Prism, add the <a href="https://github.com/robfletcher/prism-groovy/blob/gh-pages/src/prism-groovy.js"><em>prism-groovy.js</em></a> language definition then add a <em>"language-groovy"</em> class to your <em>&lt;code&gt;</em> blocks.</p>
+		<p>In addition to the regular classes that Prism adds to <em>code</em> blocks the Groovy language mode will add:
+			<dl>
+				<dt><code>.annotation</code></dt>
+				<dd>Added to any annotation name (including the <code>@</code> symbol).</dd>
+				<dt><code>.spock-block</code></dt>
+				<dd>Added to standard <a href="http://spockframework.org/" rel="external">Spock</a> block labels.</dd>
+				<dt><code>.expression</code></dt>
+				<dd>Added to any interpolated expression within a <em>GString</em>. The contents of the expression are also highlighted by Prism, i.e. you will get other tokens nested inside the <em>expression</em> token.</dd>
+			</dl>
+			If you want these tokens highlighted you will need to create additional CSS rules beyond those contained in the standard Prism themes.
+		</p>
+		<h2>Contributing</h2>
 		<p>If you're a Groovy user and good with regular expressions you can help by forking this project and turning some of those red crosses you see <a href="#jasmine-tests">down below there</a> into green dots. The language definition file is under <em>src/prism-groovy.js</em> and all you have to do to run the tests is open <em>index.html</em> in your browser. It might also help if you read the <a href="http://prismjs.com/extending.html#language-definitions" rel="external"><em>Language definitions</em></a> section of the Prism documentation.</p>
 		<a href="https://github.com/robfletcher/prism-groovy" id="fork-me"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 	</header>

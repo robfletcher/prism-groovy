@@ -7,7 +7,7 @@ Prism.languages.groovy = Prism.languages.extend('clike', {
 });
 
 Prism.languages.insertBefore('groovy', 'punctuation', {
-	'block-label': /\b(setup|given|when|then|and|cleanup|expect|where):/g
+	'spock-block': /\b(setup|given|when|then|and|cleanup|expect|where):/g
 });
 
 Prism.hooks.add('wrap', function(env) {

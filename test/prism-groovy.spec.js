@@ -202,9 +202,9 @@ describe("Groovy syntax highlighting for Prism", function() {
 
 	describe("block labels", function() {
 		it("highlights labels in Spock specifications", function() {
-			expect($('#spock .block-label').eq(0).text()).toBe('given:');
-			expect($('#spock .block-label').eq(1).text()).toBe('when:');
-			expect($('#spock .block-label').eq(2).text()).toBe('then:');
+			expect($('#spock .spock-block').eq(0).text()).toBe('given:');
+			expect($('#spock .spock-block').eq(1).text()).toBe('when:');
+			expect($('#spock .spock-block').eq(2).text()).toBe('then:');
 		});
 	});
 

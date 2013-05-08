@@ -84,17 +84,16 @@ describe("Groovy syntax highlighting for Prism", function() {
 
 	describe("numeric literals", function() {
 		var numerics = {
-			int:				  '1234567890',
-			'negative-int':	   '-1',
-			decimal:			  '12345.67890',
-			binary:			   '0b01',
-			hex:				  '0x123456789abcdef0',
-			float:				'1.1f',
-			integer:			  '1i',
-			long:				 '1L',
-			'big-integer':		'1g',
-			'big-decimal':		'1.1g',
-			'underscore-int':	 '1_000',
+			int:                  '1234567890',
+			decimal:              '12345.67890',
+			binary:               '0b01',
+			hex:                  '0x123456789abcdef0',
+			float:                '1.1f',
+			integer:              '1i',
+			long:                 '1L',
+			'big-integer':        '1g',
+			'big-decimal':        '1.1g',
+			'underscore-int':     '1_000',
 			'underscore-decimal': '1_000.000_1'
 		}
 

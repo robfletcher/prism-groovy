@@ -94,7 +94,9 @@ describe("Groovy syntax highlighting for Prism", function() {
 			'big-integer':        '1g',
 			'big-decimal':        '1.1g',
 			'underscore-int':     '1_000',
-			'underscore-decimal': '1_000.000_1'
+			'underscore-decimal': '1_000.000_1',
+			'underscore-binary':  '0b1_01',
+			'underscore-hex':     '0xff_ff'
 		}
 
 		for (num in numerics) {

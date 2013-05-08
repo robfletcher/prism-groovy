@@ -142,6 +142,7 @@ GString"""</code></pre>
 			<code id="string-with-expression">println 'single-quoted strings can ${false ? "" : "not"} contain expressions'</code>
 			<code id="gstring-with-escaped-expression">println "escaped \${expressions} are not expressions"</code>
 			<code id="regex-with-expression">println /regex strings can ${true ? '' : 'not'} contain expressions/</code>
+			<code id="non-groovy-gstring-expression" class="language-javascript">var a = "looks like a GString ${b}";</code>
 		</section>
 
 		<section class="clearfix">

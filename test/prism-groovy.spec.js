@@ -182,6 +182,11 @@ describe("Groovy syntax highlighting for Prism", function() {
 		it("highlights expressions in regex-style strings", function() {
 			expect($('#regex-with-expression .expression').length).toBe(1);
 		});
+
+		it("does not highlight things that look like GString expressions in other languages", function() {
+			expect($('#non-groovy-gstring-expression .string').text()).toBe('"looks like a GString ${b}"');
+			expect($('#non-groovy-gstring-expression .expression').length).toBe(0);
+		});
 	});
 
 	describe("comments", function() {

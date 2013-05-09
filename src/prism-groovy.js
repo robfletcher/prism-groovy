@@ -27,7 +27,7 @@ Prism.hooks.add('wrap', function(env) {
 
 		if (delimiter === '"') {
 			env.classes.push('gstring');
-		} elseif (delimiter === '/') {
+		} else if (delimiter === '/') {
 			env.classes.push('regex');
 		}
 	}

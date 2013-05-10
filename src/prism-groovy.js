@@ -23,12 +23,8 @@ Prism.hooks.add('wrap', function(env) {
 					inside: Prism.languages.groovy
 				}
 			});
-		}
 
-		if (delimiter === '"') {
-			env.classes.push('gstring');
-		} else if (delimiter === '/') {
-			env.classes.push('regex');
+			env.classes.push(delimiter === '/' ? 'regex' : 'gstring');
 		}
 	}
 });

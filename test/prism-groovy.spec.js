@@ -214,6 +214,10 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#dollar-slashy-with-escaped-delimiter .string').text()).toBe('$/an escaped delimiter like $/$ does not terminate a dollar-slashy string/$');
 		});
 
+		it("does not prematurely terminate a dollar slashy string containing a partial terminator", function() {
+			expect($('#dollar-slashy-with-partial-delimiter .string').text()).toBe('$/a partial delimiter like / does not terminate a dollar-slashy string/$');
+		});
+
 		it("does not highlight things that look like GString expressions in other languages", function() {
 			expect($('#non-groovy-gstring-expression .string').text()).toBe('"looks like a GString ${b}"');
 			expect($('#non-groovy-gstring-expression .expression').length).toBe(0);

@@ -150,6 +150,9 @@ multiline
 GString"""</code></pre>
 			<pre><code id="string-with-escaped-line-break">a = 'a string with an escaped \
 line break'</code></pre>
+			<pre><code id="dollar-slashy-string">a = $/a 'dollar-slashy' string
+split over multiple lines
+/$</code></pre>
 		</section>
 
 		<section class="clearfix">
@@ -160,9 +163,17 @@ line break'</code></pre>
 expression ${a.b() + a} inside a
 multiline
 GString"""</code></pre>
+			<pre><code id="multiline-dollar-slashy-with-expression">$/an
+expression ${a.b() + a} inside a
+multiline
+dollar-slashy string/$</code></pre>
 			<code id="string-with-expression">println 'single-quoted strings can ${false ? "" : "not"} contain expressions'</code>
 			<code id="gstring-with-escaped-expression">println "escaped \${expressions} are not expressions"</code>
 			<code id="regex-with-expression">println /regex strings can ${true ? '' : 'not'} contain expressions/</code>
+			<code id="dollar-slashy-with-dollar">println $/dollar-slashy strings can contain a $ on its own/$</code>
+			<code id="dollar-slashy-with-double-dollar">println $/dollar-slashy strings use a dollar for escaping so $$foo is not an expression/$</code>
+			<code id="dollar-slashy-with-backslash-dollar">println $/dollar-slashy strings do not treat backslash as escape so \$foo is an expression/$</code>
+			<code id="dollar-slashy-with-escaped-delimiter">println $/an escaped delimiter like $/$ does not terminate a dollar-slashy string/$</code>
 			<code id="non-groovy-gstring-expression" class="language-javascript">var a = "looks like a GString ${b}";</code>
 		</section>
 

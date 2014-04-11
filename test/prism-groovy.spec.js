@@ -141,12 +141,13 @@ describe("Groovy syntax highlighting for Prism", function() {
 
 	describe("string literals", function() {
 		var stringTypes = {
-			string:              "'a string'",
-			gstring:             '"a GString"',
-			'regex-string':      '/a regex style string/',
-			pattern:             '/a Pattern literal/',
-			'multiline-string':  "'''a\nmultiline\nstring'''",
-			'multiline-gstring': '"""a\nmultiline\nGString"""'
+			string:                 "'a string'",
+			gstring:                '"a GString"',
+			'regex-string':         '/a regex style string/',
+			pattern:                '/a Pattern literal/',
+			'multiline-string':     "'''a\nmultiline\nstring'''",
+			'multiline-gstring':    '"""a\nmultiline\nGString"""',
+			'dollar-slashy-string': "$/a 'dollar-slashy' string\nsplit over multiple lines\n/$"
 		};
 
 		for (str in stringTypes) {
@@ -177,6 +178,12 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#multiline-gstring-with-expression .operator').text()).toBe('.+');
 		});
 
+		it("highlights expressions in multiline dollar-slashy strings", function() {
+			expect($('#multiline-dollar-slashy-with-expression .string').text()).toBe('$/an\nexpression ${a.b() + a} inside a\nmultiline\ndollar-slashy string/$');
+			expect($('#multiline-dollar-slashy-with-expression .punctuation').text()).toBe('${()}');
+			expect($('#multiline-dollar-slashy-with-expression .operator').text()).toBe('.+');
+		});
+
 		it("does not highlight expressions in single-quoted strings", function() {
 			expect($('#string-with-expression .string').text()).toBe('\'single-quoted strings can ${false ? "" : "not"} contain expressions\'');
 			expect($('#string-with-expression .expression').length).toBe(0);
@@ -188,6 +195,23 @@ describe("Groovy syntax highlighting for Prism", function() {
 
 		it("highlights expressions in regex-style strings", function() {
 			expect($('#regex-with-expression .expression').length).toBe(1);
+		});
+
+		it("does not highlight a standalone dollar in a dollar slashy string", function() {
+			expect($('#dollar-slashy-with-dollar .expression').length).toBe(0);
+		});
+
+		it("does not highlight a double dollar in a dollar slashy string", function() {
+			expect($('#dollar-slashy-with-double-dollar .expression').length).toBe(0);
+		});
+
+		it("only a dollar is an escape character in a dollar-slashy string", function() {
+			expect($('#dollar-slashy-with-backslash-dollar .expression').length).toBe(1);
+			expect($('#dollar-slashy-with-backslash-dollar .expression').text()).toBe('$foo');
+		});
+
+		it("does not prematurely terminate a dollar slashy string containing an escaped terminator", function() {
+			expect($('#dollar-slashy-with-escaped-delimiter .string').text()).toBe('$/an escaped delimiter like $/$ does not terminate a dollar-slashy string/$');
 		});
 
 		it("does not highlight things that look like GString expressions in other languages", function() {

@@ -84,6 +84,7 @@ describe("Groovy syntax highlighting for Prism", function() {
 			expect($('#def-param .keyword').eq(1).text()).toBe('def');
 			expect($('#import-as .keyword').eq(1).text()).toBe('as');
 			expect($('#in .keyword').eq(1).text()).toBe('in');
+			expect($('#trait .keyword').eq(1).text()).toBe('trait');
 		});
 	});
 
